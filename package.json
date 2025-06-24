@@ -1,0 +1,13 @@
+{
+  "name": "dora-metrics-demo",
+  "version": "1.0.0",
+  "description": "Demo project for DORA Metrics with GitHub Actions",
+  "main": "scripts/collect_metrics.js",
+  "type": "module",
+  "scripts": {
+    "start": "node scripts/collect_metrics.js"
+  },
+  "dependencies": {
+    "@octokit/rest": "^20.0.0"
+  }
+}

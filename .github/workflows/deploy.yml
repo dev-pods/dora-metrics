@@ -1,0 +1,23 @@
+name: Deploy Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Install dependencies (simulate)
+      run: echo "Installing dependencies..."
+
+    - name: Run tests (simulate)
+      run: echo "Running tests..."
+
+    - name: Deploy to production (simulate)
+      run: echo "Deploy successful ✅"

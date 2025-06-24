@@ -1,0 +1,23 @@
+name: Failure Simulator Pipeline
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy-with-failure:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Simulate deploy
+      run: |
+        echo "Starting deploy..."
+        FAILURE_CHANCE=$(( RANDOM % 2 )) # 50% chance of failure
+        if [ $FAILURE_CHANCE -eq 0 ]; then
+          echo "Deploy failed ❌"
+          exit 1
+        else
+          echo "Deploy succeeded ✅"
+        fi
